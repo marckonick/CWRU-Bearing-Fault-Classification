@@ -39,7 +39,7 @@ Classification experiment:
       for all loads (motor speeds)
 
 
-![stft_results](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/cm_STFT_1730_1750_1772_1797_1708227224.png)
+![stft_results](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/cm_STFT_1730_1750_1772_1797_1708285720.png)
 
 
 
