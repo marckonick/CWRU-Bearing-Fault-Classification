@@ -1,0 +1,57 @@
+# config.yaml
+
+data_and_features:
+    data_folder: "Signals_CSV/"
+    save_folder: "Results/"
+    
+    signals_2_extract:
+         - DE_signal
+         - FE_signal
+     
+    # Norma, BF, IRF, OR_C6, OR_O3, OR_OP12 <- all      
+    all_fault_types:
+         - Normal
+         - BF
+         - IRF
+         - OR_C6
+
+    
+    # '0', '0.007', '0.014', '0.028', 
+    fault_diameterses:
+        - '0'
+        - '0.007'
+        - '0.014'
+        - '0.021'
+             
+    Fs: 12000
+    sel_speed:  # other values 1730, 1750, 1772, 1797
+        - 1750
+        - 1772
+        - 1797
+        
+    selected_feature: "STFT" # FFT, STFT, TimeFrames
+    
+    # framming settings
+    frame_len: 2500 
+    frame_move_len: 500
+    
+    # FFT
+    N_fft: 128
+    
+    # STFT
+    win_len_stft: 128 
+    overlap_l_stft: 32
+    
+    # time features
+    time_frame_x: 50
+    time_frame_y: 50
+    
+    to_save_res: True   
+
+model_optimization:
+  test_size: 0.25
+  batch_size: 32
+  n_epochs: 12
+  device: "cpu"
+
+
