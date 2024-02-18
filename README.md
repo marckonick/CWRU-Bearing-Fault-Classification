@@ -8,10 +8,15 @@ CWRU Dataset: Vibration data of rolling bearing
 More details @ https://engineering.case.edu/bearingdatacenter/welcome
 Dataset available @ https://engineering.case.edu/bearingdatacenter/12k-drive-end-bearing-fault-data
 
+
+
+
 ## Files Description
+- ReadAndConvertFiles.m        - MATLAB file to convert original data files to .csv 
 - main_classification.py       - script for load data, feature extraction and model training 
 - Functions_DataFeatures.py    - functions for data load and feature extraction 
 - Function_Models.py           - model definitions
+- Config.yaml                  - configuration file for selecting feautres and model 
 
 ## Features
 Input signals are divided into overlaping segments for feature extraction.
@@ -28,4 +33,8 @@ Model types:
 
 
  ## Results
+Classification experiment:
+    - Total 10 classes 1 normal state and 9 faulty states
+    - Each fault corresponds to one fault location and one fault size 
+      for all loads (motor speeds)
 
