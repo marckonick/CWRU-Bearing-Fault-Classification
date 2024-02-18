@@ -38,3 +38,10 @@ Classification experiment:
     - Each fault corresponds to one fault location and one fault size 
       for all loads (motor speeds)
 
+
+![stft_results](https://github.com/hfawaz/marckonick/CWRU-Bearing-Fault-Classification/master/Results/cm_STFT_1730_1750_1772_1797_1708227224.png)
+
+
+
+
+
