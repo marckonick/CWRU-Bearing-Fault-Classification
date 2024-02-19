@@ -38,8 +38,9 @@ Classification experiment:
     - Each fault corresponds to one fault location and one fault size 
       for all loads (motor speeds)
 
-![conf_matrix_stft](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/cm_STFT_1730_1750_1772_1797_1708285720.png)
-![Confusion Matrix (in percent) - STFT features ](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/norm_cm_STFT_1730_1750_1772_1797_1708285720.png)
+Best results:
+ - ![conf_matrix_stft](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/cm_STFT_1730_1750_1772_1797_1708285720.png)
+ - ![Confusion Matrix (in percent) - STFT features ](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/norm_cm_STFT_1730_1750_1772_1797_1708285720.png)
 
 
 
