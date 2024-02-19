@@ -38,7 +38,7 @@ Classification experiment:
     - Each fault corresponds to one fault location and one fault size 
       for all loads (motor speeds)
 
-
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 ![conf_matrix_stft](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/cm_STFT_1730_1750_1772_1797_1708285720.png)
 ![conf_matrix_percent_stft](https://github.com/marckonick/CWRU-Bearing-Fault-Classification/tree/main/Results/norm_cm_STFT_1730_1750_1772_1797_1708285720.png)
 
