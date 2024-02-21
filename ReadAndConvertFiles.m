@@ -2,19 +2,20 @@ clear all
 close all
 clc
 
-FaultClassFolder = 'Fault12K\';
+
+FaultClassFolder = 'Fault12K\'; % folder with original .mat files 
 all_fault_types = {'Normal','IRF', 'BF', 'OR_C6', 'OR_O3', 'OR_OP12'};
 Fault_SampRate = '12K'; 
 sel_speed = 1730; % 1730, 1750, 1772, 1790
-sel_diam = '0007\'; % 
+sel_diam = '0007\'; % 0014 0021 0028
 
 for i_f = 1:length(all_fault_types)
     
     sel_fault = all_fault_types{i_f};  
     T = readtable('SignalFileNames_12K.xlsx');
 %% find file name
-    [sel_row,a] = find(T.ApproxMotorSpeed==sel_speed & T.FaultDiameter == str2double(sel_diam(1:end-1))); % biramo redove
-    % biramo celije na osnovu reda i kolone(tipa greske)
+    [sel_row,a] = find(T.ApproxMotorSpeed==sel_speed & T.FaultDiameter == str2double(sel_diam(1:end-1))/1000); % selecting rows str2double(sel_diam(1:end-1))
+    % selecting cells based on row, columns (fault type)
     if strcmp(sel_fault,'IRF')==1
         sel_file_names = T.File_IR(sel_row); 
         FaultTypeFolder = strcat('InnerRace\',sel_diam);
@@ -24,10 +25,10 @@ for i_f = 1:length(all_fault_types)
     elseif strcmp(sel_fault,'OR_C6')==1 % OuterRace Centered @6
          sel_file_names = T.File_OR_C6(sel_row);
          FaultTypeFolder = strcat('OuterRace\centered6\',sel_diam); 
-    elseif strcmp(sel_fault,'OR_O3')==1 % OuterRace Centered @6
+    elseif strcmp(sel_fault,'OR_O3')==1 % OuterRace Centered @3
          sel_file_names = T.File_OR_O3(sel_row);
          FaultTypeFolder = strcat('OuterRace\Ortogonal_3\',sel_diam);  
-    elseif strcmp(sel_fault,'OR_OP12')==1 % OuterRace Centered @6
+    elseif strcmp(sel_fault,'OR_OP12')==1 % OuterRace Centered OP12
          sel_file_names = T.File_OR_OP12(sel_row);
          FaultTypeFolder = strcat('OuterRace\Opposite_12\',sel_diam);      
     elseif strcmp(sel_fault,'Normal')==1   
@@ -37,7 +38,7 @@ for i_f = 1:length(all_fault_types)
 
 %% read file name
 
-    SaveFolder = "Signals_CSV/";
+    SaveFolder = "Signals_CSV/"; % 
 
     for j = 1:length(sel_file_names)
     
