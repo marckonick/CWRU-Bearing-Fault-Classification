@@ -20,7 +20,7 @@ def load_config(config_file):
 
 def main():   
     
-    config = load_config("Config.yaml")  
+    config = load_config("config.yaml")  
     df_config = config['data_and_features']
     mtrain_config = config['model_optimization']
 

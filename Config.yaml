@@ -25,11 +25,12 @@ data_and_features:
              
     Fs: 12000
     sel_speed:  # other values 1730, 1750, 1772, 1797
+        - 1730
         - 1750
         - 1772
         - 1797
         
-    selected_feature: "STFT" # FFT, STFT, TimeFrames
+    selected_feature: "TimeFrames" # FFT, STFT, TimeFrames
     
     # framming settings
     frame_len: 2500 
@@ -51,7 +52,7 @@ data_and_features:
 model_optimization:
   test_size: 0.25
   batch_size: 32
-  n_epochs: 12
+  n_epochs: 25
   device: "cpu"
 
 
