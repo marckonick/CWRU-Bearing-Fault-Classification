@@ -144,7 +144,7 @@ def extract_fft_features(X_all, Y_all, Fs, **kwargs):
             #if len(Y_matrix) == 1214:
             #    print("evo")
             
-    return np.array(fft_matrix), np.array(Y_matrix)
+    return np.array(fft_matrix), np.array(Y_matrix), xf
 
 
 def extract_EnvSpec_features(X_all, Y_all, N, Fs, frame_len, frame_move_len):
@@ -251,7 +251,8 @@ def main_extract_features(X_all, Y_all, chosen_features, Fs, **kwargs):
   kwargs_outputs = {}
 
   if chosen_features == 'FFT':
-        X_feat_all, Y_all = extract_fft_features(X_all, Y_all, Fs, **kwargs) 
+        X_feat_all, Y_all, x_f = extract_fft_features(X_all, Y_all, Fs, **kwargs) 
+        kwargs_outputs.update({'f':x_f})
   elif chosen_features == 'STFT':
         X_feat_all, Y_all, f, t = extract_stft_features(X_all, Y_all, Fs, **kwargs)
         kwargs_outputs.update({'f':f})
