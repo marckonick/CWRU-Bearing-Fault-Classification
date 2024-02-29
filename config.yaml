@@ -30,14 +30,12 @@ data_and_features:
         - 1772
         - 1797
         
-    selected_feature: "TimeFrames" # FFT, STFT, TimeFrames
+    selected_feature: "FFT" # FFT, STFT, TimeFrames
     
     # framming settings
     frame_len: 2500 
     frame_move_len: 500
     
-    # FFT
-    N_fft: 128
     
     # STFT
     win_len_stft: 128 
@@ -52,7 +50,7 @@ data_and_features:
 model_optimization:
   test_size: 0.25
   batch_size: 32
-  n_epochs: 25
+  n_epochs: 15
   device: "cpu"
 
 

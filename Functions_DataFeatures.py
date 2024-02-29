@@ -131,7 +131,6 @@ def extract_fft_features(X_all, Y_all, Fs, **kwargs):
             curr_frame = X[:, frame_begin:frame_end]
             fft_matrix_mini = []   
             for jj in range(N_ft): 
-             
              xf, curr_frame_fft = fft_analysis(N_fft,Fs,curr_frame[jj,:])   
              fft_matrix_mini.append(2.0/N_fft*np.abs(curr_frame_fft[0:N_fft//2]))
              

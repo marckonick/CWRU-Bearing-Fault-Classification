@@ -58,12 +58,13 @@ def main():
      
 
     kwargs_arguments = {'frame_len':df_config["frame_len"], 'frame_move_len':df_config["frame_move_len"], 'win_len':df_config["win_len_stft"], 'overlap_l':df_config["overlap_l_stft"], 
-                    'N_fft':df_config["N_fft"], 'time_frame_x':df_config["time_frame_x"], 'time_frame_y':df_config["time_frame_y"] }
+                    'N_fft':df_config["frame_len"], 'time_frame_x':df_config["time_frame_x"], 'time_frame_y':df_config["time_frame_y"] }
 
      
     chosen_features = df_config["selected_feature"] #'FFT' # STFT, TimeFrames
     Fs = df_config['Fs']
-
+  
+    
     X_all, Y_all, kwargs_outputs = ff.main_extract_features(X_all, Y_all, chosen_features, Fs, **kwargs_arguments)
 
     t_end = time.time()
@@ -96,9 +97,12 @@ def main():
 
     ################## MODEL AND TRAINING ###################
     device = mtrain_config['device']
+    
 
+    
+    
     if chosen_features == "FFT": 
-        model = modata.DNN_MEL(X_all.shape[1], n_classes=n_classes, n_per_layer=[64,32])
+        model = modata.DNN_MEL(X_all.shape[1], n_classes=n_classes, n_per_layer=[128,32])
     elif chosen_features == "STFT":  
         model = modata.VGG_1D(n_classes, in_channels=in_channels, n_chans1=[8,16,16, 16], k_size = [3,3,3,3], padding_t='same', fc_size = 384) # 384
     elif chosen_features == "TimeFrames":
